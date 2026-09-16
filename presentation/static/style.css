@@ -1,0 +1,177 @@
+:root {
+    --ink: #202124;
+    --muted: #5f6368;
+    --line: #dadce0;
+    --bg: #f6f7f9;
+    --blue: #1a56b0;
+    --green: #137333;
+    --red: #c5221f;
+    --amber: #b06000;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.5 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+header {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
+}
+
+header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.backend {
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 12px;
+}
+
+h1 { font-size: 22px; margin: 0 0 20px; }
+
+/* ---------- flash messages ---------- */
+.flash {
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    border: 1px solid;
+}
+.flash.error   { background: #fce8e6; border-color: #f5c3c0; color: var(--red); }
+.flash.success { background: #e6f4ea; border-color: #b7dfc4; color: var(--green); }
+
+/* ---------- toolbar ---------- */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.search { display: flex; gap: 8px; }
+
+input[type="text"] {
+    font: inherit;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    min-width: 260px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(26, 86, 176, .14);
+}
+
+/* ---------- buttons ---------- */
+.btn, button {
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 6px;
+    padding: 9px 14px;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.btn:hover, button:hover { background: #f1f3f4; }
+.btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+.btn.primary:hover { background: #164a99; }
+.btn.danger { color: var(--red); border-color: #f0b9b7; }
+.btn.danger:hover { background: #fce8e6; }
+.btn.ghost { color: var(--muted); }
+.btn.small { padding: 5px 10px; font-size: 13px; }
+
+/* ---------- table ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); }
+th { background: #fafafa; font-size: 12px; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: #fafbfc; }
+
+.right { text-align: right; }
+.mono { font-family: Consolas, "Courier New", monospace; font-size: 13px; color: var(--muted); }
+.muted { color: var(--muted); }
+
+.actions { display: flex; gap: 6px; justify-content: flex-end; }
+.actions form { display: inline; margin: 0; }
+
+.pill {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.pill.in  { background: #e6f4ea; color: var(--green); }
+.pill.out { background: #fdf0e3; color: var(--amber); }
+
+.empty {
+    background: #fff;
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* ---------- form ---------- */
+.card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 520px;
+}
+
+.card label { display: block; margin-bottom: 18px; }
+.card .label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.card input[type="text"] { width: 100%; min-width: 0; }
+.hint { display: block; font-size: 12px; color: var(--muted); margin-top: 5px; }
+
+.form-actions { display: flex; gap: 10px; }
+
+footer {
+    margin: 40px auto;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+}

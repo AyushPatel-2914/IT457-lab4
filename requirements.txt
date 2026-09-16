@@ -1,0 +1,3 @@
+# Only the web UI needs a dependency.
+# The CLI, the business tier, the data tier and the tests are pure standard library.
+Flask>=3.0

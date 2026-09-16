@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Library{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <div class="wrap">
+        <a class="brand" href="{{ url_for('index') }}">Library Manager</a>
+        <span class="backend">data source: {{ backend_name }}</span>
+    </div>
+</header>
+
+<main class="wrap">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="wrap">
+    3-tier demo &middot; presentation &rarr; business &rarr; data &middot;
+    this page never touches the database directly
+</footer>
+</body>
+</html>

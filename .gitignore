@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.db
+
+# the assignment brief, not part of the submission
+*.docx
+.venv/
+venv/
+.vscode/
+.idea/
+.DS_Store
